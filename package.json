@@ -1,0 +1,67 @@
+{
+  "name": "@it/ssr",
+  "version": "0.0.1",
+  "main": "./lib/index.js",
+  "bin": {
+    "it-ssr": "./bin/index.js"
+  },
+  "typings": "./index.d.ts",
+  "files": [
+    "client.js",
+    "server.js"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "lib:client": "webpack --config config/config.lib.client.js",
+    "lib:server": "webpack --config config/config.lib.server.js",
+    "lib": "yarn lib:client && yarn lib:server"
+  },
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "commander": "^2.19.0",
+    "cross-spawn": "^6.0.5",
+    "css-loader": "^2.1.0",
+    "ejs": "^2.6.1",
+    "fork-ts-checker-webpack-plugin": "^0.5.2",
+    "html-webpack-plugin": "^3.2.0",
+    "isomorphic-fetch": "^2.2.1",
+    "isomorphic-style-loader": "^4.0.0",
+    "koa": "^2.6.2",
+    "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "node-sass": "^4.11.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "postcss-safe-parser": "^4.0.1",
+    "react-router-config": "^4.4.0-beta.6",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "ts-loader": "^5.3.2",
+    "tslint": "^5.12.0",
+    "tslint-config-prettier": "^1.17.0",
+    "tslint-react": "^3.6.0",
+    "typescript": "^3.2.2",
+    "uglifyjs-webpack-plugin": "^2.1.1",
+    "webpack": "^4.28.3",
+    "webpack-cli": "^3.2.0",
+    "webpack-dev-server": "^3.1.14",
+    "webpack-merge": "^4.1.5",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "devDependencies": {
+    "@types/ejs": "^2.6.1",
+    "@types/koa": "^2.0.48",
+    "@types/koa-router": "^7.0.36",
+    "@types/koa-static": "^4.0.0",
+    "@types/node": "^10.12.18",
+    "@types/react": "^16.7.18",
+    "@types/react-dom": "^16.0.11",
+    "@types/react-router-config": "^1.1.0",
+    "@types/react-router-dom": "^4.3.1"
+  },
+  "peerDependencies": {
+    "react": "^16.7.0-alpha.2",
+    "react-dom": "^16.7.0-alpha.2",
+    "react-router-dom": "^4.3.1"
+  }
+}

@@ -1,0 +1,31 @@
+Html Webpack Plugin:
+<pre>
+  Error: Child compilation failed:
+  Entry module not found: Error: Can't resolve '/Users/logan/Projects/frontend/ssr-framework/src/index.ejs' in '/Users/logan/Projects/frontend/ssr-framework'  :
+  Error: Can't resolve '/Users/logan/Projects/frontend/ssr-framework/src/index.ejs' in '/Users/logan/Projects/frontend/ssr-framework'
+  
+  - compiler.js:79 childCompiler.runAsChild
+    [ssr-framework]/[html-webpack-plugin]/lib/compiler.js:79:16
+  
+  - Compiler.js:296 compile
+    [ssr-framework]/[webpack]/lib/Compiler.js:296:11
+  
+  - Compiler.js:552 hooks.afterCompile.callAsync.err
+    [ssr-framework]/[webpack]/lib/Compiler.js:552:14
+  
+  
+  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
+    [ssr-framework]/[tapable]/lib/Hook.js:154:20
+  
+  - Compiler.js:549 compilation.seal.err
+    [ssr-framework]/[webpack]/lib/Compiler.js:549:30
+  
+  
+  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
+    [ssr-framework]/[tapable]/lib/Hook.js:154:20
+  
+  - Compilation.js:1323 hooks.optimizeAssets.callAsync.err
+    [ssr-framework]/[webpack]/lib/Compilation.js:1323:35
+  
+  
+</pre>
