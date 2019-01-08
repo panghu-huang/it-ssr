@@ -3,13 +3,13 @@ const UglifyJsWebpackPlugin = require('uglifyjs-webpack-plugin');
 const paths = require('./path.lib');
 
 module.exports = {
-  mode: 'production',
+  mode: 'development',
   entry: paths.appClient,
   output: {
     path: paths.distDirectory,
-    filename: 'client.js',
+    filename: 'client.development.js',
     libraryTarget: 'umd',
-    library: 'client.js',
+    library: 'client.development.js',
   },
   resolve: {
     alias: {

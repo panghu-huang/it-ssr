@@ -3,7 +3,6 @@ const webpackMerge = require('webpack-merge');
 const paths = require('../config/path.app');
 
 function mergeCustomizeConfig(originalConfig, isServer, isDev) {
-  console.log('node env', process.env.NODE_ENV);
   const { customizeConfigPath } = paths;
   let finalWebpackConfig = originalConfig;
   if (fs.existsSync(customizeConfigPath)) {

@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const nodeExternals = require('webpack-node-externals');
 const paths = require('./path.app');
 
@@ -14,7 +15,7 @@ module.exports = {
   resolve: {
     alias: {
       src: paths.appSource,
-      '@it/ssr': '@it/ssr/lib/server.js',
+      'it-ssr': 'it-ssr/lib/server.js',
     },
     extensions: [
       '.js', '.jsx', '.ts', '.tsx', '.scss',
@@ -26,6 +27,7 @@ module.exports = {
         test: /\.tsx?$/,
         loader: require.resolve('ts-loader'),
         include: paths.appSource,
+        exclude: /node_modules/,
         options: {
           transpileOnly: true,
         },
@@ -33,6 +35,7 @@ module.exports = {
       {
         test: /\.scss$/,
         include: paths.appSource,
+        exclude: /node_modules/,
         use: [
           require.resolve('isomorphic-style-loader'),
           require.resolve('css-loader'),
@@ -43,5 +46,10 @@ module.exports = {
   },
   externals: [
     nodeExternals()
+  ],
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('development')
+    })
   ],
 };

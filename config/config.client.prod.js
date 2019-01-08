@@ -14,12 +14,18 @@ module.exports = merge(baseConfig, {
   output: {
     chunkFilename: '[name].chunk.js',
   },
+  resolve: {
+    alias: {
+      'it-ssr': 'it-ssr/lib/client.production.js',
+    },
+  },
   module: {
     rules: [
       {
         test: /\.tsx?$/,
         loader: require.resolve('ts-loader'),
         include: paths.appSource,
+        exclude: /node_modules/,
         options: {
           transpileOnly: true,
         },
@@ -27,6 +33,7 @@ module.exports = merge(baseConfig, {
       {
         test: /\.scss$/,
         include: paths.appSource,
+        exclude: /node_modules/,
         use: [
           MiniCssExtractPlugin.loader,
           require.resolve('css-loader'),

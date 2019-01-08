@@ -6,6 +6,9 @@ const clientConfig = require('../config/config.client.dev');
 const serverConfig = require('../config/config.server.dev');
 const mergeCustomizeConfig = require('./customize-config');
 
+process.env.BABEL_ENV = 'development';
+process.env.NODE_ENV = 'development';
+
 let subProcess;
 
 const serverBundlePath = path.join(

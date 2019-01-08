@@ -1,20 +1,19 @@
 {
-  "name": "@it/ssr",
-  "version": "0.0.1",
+  "name": "it-ssr",
+  "version": "0.0.14",
   "main": "./lib/index.js",
   "bin": {
     "it-ssr": "./bin/index.js"
   },
   "typings": "./index.d.ts",
-  "files": [
-    "client.js",
-    "server.js"
-  ],
   "license": "MIT",
   "scripts": {
-    "lib:client": "webpack --config config/config.lib.client.js",
-    "lib:server": "webpack --config config/config.lib.server.js",
-    "lib": "yarn lib:client && yarn lib:server"
+    "lib:dev_client": "webpack --config config/config.lib.client.js",
+    "lib:dev_server": "webpack --config config/config.lib.server.js",
+    "lib:dev": "yarn lib:dev_client && yarn lib:dev_server",
+    "lib:prod_client": "webpack --config config/config.lib.client.prod.js",
+    "lib:prod_server": "webpack --config config/config.lib.server.prod.js",
+    "lib:prod": "yarn lib:prod_client && yarn lib:prod_server"
   },
   "dependencies": {
     "chalk": "^2.4.1",
